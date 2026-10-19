@@ -1,0 +1,18 @@
+# Local agent metadata, research, logs and tools
+.manus/
+.work/
+
+# Local runtime and generated state
+state/
+cache/
+
+# PowerShell transient files
+*.clixml
+*.tmp
+
+# Future .NET build output
+**/bin/
+**/obj/
+
+# User-specific settings
+appsettings.Local.json

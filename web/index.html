@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="slg-csrf" content="__SLG_CSRF_TOKEN__">
+  <title>Sysinternals Live GUI</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Zum Toolkatalog springen</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">SLG</span><div><h1>Sysinternals Live GUI</h1><p>Lokaler Windows-Agent · offizielle Microsoft-Quellen</p></div></div>
+    <div class="agent-status" id="agent-status" aria-live="polite"><span class="status-dot pending"></span>Agent wird geprüft…</div>
+  </header>
+
+  <main class="workspace">
+    <section class="intro-panel" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">WINDOWS · LOOPBACK · MANIFEST-GESTEUERT</p>
+        <h2 id="intro-title">Sysinternals ohne Ratespiel</h2>
+        <p>Der Katalog zeigt die offiziellen Toolfamilien. Die Detailansicht prüft für <strong>diesen Windows-Host</strong>, ob ein geprüftes lokales Artefakt, Sysinternals Live oder ein offizieller Download verfügbar ist.</p>
+      </div>
+      <div class="trust-note"><strong>Wichtig:</strong> „Live verfügbar“ bedeutet ausschließlich, dass der offizielle UNC-Pfad erreichbar ist. Unternehmensrichtlinien, UAC und Application Control können die Ausführung dennoch blockieren.</div>
+    </section>
+
+    <section class="catalog-controls" aria-label="Katalogfilter">
+      <label class="search-field"><span>Suche</span><input id="search" type="search" placeholder="Name, Beschreibung oder Kategorie" autocomplete="off"></label>
+      <label class="select-field"><span>Kategorie</span><select id="category"><option value="">Alle Kategorien</option></select></label>
+      <button class="button secondary" id="clear-filter" type="button">Filter zurücksetzen</button>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+    </section>
+
+    <section id="catalog" class="catalog" aria-label="Sysinternals-Toolkatalog">
+      <div class="catalog-loading" id="catalog-loading">Katalog wird geladen…</div>
+      <div class="tool-grid" id="tool-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="tool-dialog" class="tool-dialog" aria-labelledby="tool-name">
+    <form method="dialog" class="dialog-head"><button class="icon-button" aria-label="Detailansicht schließen">×</button></form>
+    <div id="tool-detail" class="tool-detail"></div>
+  </dialog>
+
+  <template id="tool-card-template">
+    <article class="tool-card">
+      <div class="tool-card-head"><div><h3></h3><p class="version"></p></div><span class="execution-badge"></span></div>
+      <p class="description"></p>
+      <div class="chip-row categories"></div>
+      <button class="button primary full" type="button">Details und Verfügbarkeit</button>
+    </article>
+  </template>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

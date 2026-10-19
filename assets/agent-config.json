@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "product": "Sysinternals Live GUI",
+  "manifestRevision": "2026-10-14-powerShell-bootstrap",
+  "listenHost": "127.0.0.1",
+  "defaultPort": 18765,
+  "allowedOrigins": [
+    "http://127.0.0.1:18765"
+  ],
+  "cacheRelativePath": "state/cache",
+  "catalogRelativePath": "assets/catalog.json",
+  "executionManifestRelativePath": "assets/execution-manifest.json",
+  "officialHosts": [
+    "learn.microsoft.com",
+    "live.sysinternals.com",
+    "download.sysinternals.com",
+    "www.microsoft.com"
+  ]
+}
